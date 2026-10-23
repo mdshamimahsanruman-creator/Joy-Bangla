@@ -28,7 +28,13 @@ class Blockchain:
         ).encode()
 
         return hashlib.sha256(block_data).hexdigest()
+joy_bangla.create_block(
+    "My second test block",
+    joy_bangla.get_chain()[-1]["hash"]
+)
 
+print("Total blocks:", len(joy_bangla.get_chain()))
+print("New block added successfully!")
     def get_chain(self):
         return self.chain
 
